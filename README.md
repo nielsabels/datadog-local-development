@@ -1,2 +1,42 @@
-# datadog-local-development
-Explains how to test your DataDog development locally, and provides a script with which to run a local DataDog Agent using Docker. Whoo!
+# Developing locally with DataDog 
+
+## Synopsis
+
+This README aims to explain how to develop locally with DataDog. Note: using this method you will not run all of DataDog locally. For that you can create a _personal_ account. What you will find here is a read-up on how to host your local DataDog agent, and have your metrics sent to your very own DataDog environment.   
+
+## Prerequisites
+
+1) You have Docker installed (if not, get it [here](https://docs.docker.com/docker-for-windows/))
+2) You have a DataDog account (not your company issued account, create a personal one [at DataDog](https://www.datadoghq.com/))
+3) You have an API key on your DataDog account (get it [here](https://app.datadoghq.com/account/settings#api))
+
+## Starting out
+
+If you have met all of the prerequisites, great! Let's get to the fun stuff.
+
+### Running the Docker container
+
+We are going to want to ramp up a Docker container which hosts the DataDog Agent.
+
+```
+docker run -d --name dd-agent --restart=always -h localdev -v /var/run/docker.sock:/var/run/docker.sock -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro -p 8125:8125/udp -e API_KEY=DataDog_API_KEY datadog/docker-dd-agent:latest
+```
+
+Note: in the above command please replace _DataDog_API_KEY_ with [your API key](https://app.datadoghq.com/account/settings#api).
+
+### Stopping and removing the container
+
+When you want to shut the container down and remove it, execute the following commands to stop and remove the container.
+
+
+```
+docker stop $(docker ps -q --filter name=dd-agent)
+docker rm $(docker ps -a -q --filter name=dd-agent)
+```
+
+ 
+
+
+
+
+
