@@ -6,9 +6,9 @@ This README aims to explain how to develop locally with DataDog. Note: using thi
 
 ## Prerequisites
 
-1) You have Docker installed (if not, get it [here](https://docs.docker.com/docker-for-windows/))
-2) You have a DataDog account (not your company issued account, create a personal one [at DataDog](https://www.datadoghq.com/))
-3) You have an API key on your DataDog account (get it [here](https://app.datadoghq.com/account/settings#api))
+1. You have Docker installed (if not, get it [here](https://docs.docker.com/docker-for-windows/))
+2. You have a DataDog account (not your company issued account, create a personal one [at DataDog](https://www.datadoghq.com/))
+3. You have an API key on your DataDog account (get it [here](https://app.datadoghq.com/account/settings#api))
 
 ## Starting out
 
