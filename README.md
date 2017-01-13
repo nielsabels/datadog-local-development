@@ -28,15 +28,11 @@ Note: in the above command please replace _DataDog_API_KEY_ with [your API key](
 
 When you want to shut the container down and remove it, execute the following commands to stop and remove the container.
 
-
 ```
 docker stop $(docker ps -q --filter name=dd-agent)
 docker rm $(docker ps -a -q --filter name=dd-agent)
 ```
 
- 
+ ## Notes for Windows 7 users
 
-
-
-
-
+Make sure to connect to the DataDog Agent using the IP Address of your Docker VM. The default is: ```192.168.99.100```. For Windows 10 you can _probably_ use ```localhost```.
