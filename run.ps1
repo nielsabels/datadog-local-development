@@ -1,0 +1,1 @@
+docker run -d --name dd-agent --restart=always -h localdev -v /var/run/docker.sock:/var/run/docker.sock -v /proc/:/host/proc/:ro -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro -p 8125:8125/udp -e API_KEY=!!!YOUR_API_KEY_HERE!!! datadog/docker-dd-agent:latest
